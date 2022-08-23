@@ -5,14 +5,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#what-is-babelnet?">What is BabelNet?</a></li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#execution">Execution</a></li>
-      </ul>
-    </li>
+    <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#why-babelnet?">Why BabelNet?</a></li>
   </ol>
 </details>
@@ -49,7 +42,7 @@ made against API
 
 ![Pythoncode](Image/Pythoncode.png)
 
-7. Refer "BabelNet_querying_practice.ipynb" file to understand the basic querying.
+7. Refer ["BabelNet_querying_practice.ipynb"](https://github.com/Ganesamanian/Working-with-BabelNet/blob/main/BabelNet_querying_practice.ipynb) file to understand the basic querying.
 
 
 
@@ -61,7 +54,7 @@ made against API
 
 
 The knowledge from the babelnet can be used to enrich with the knowledge we presently have as a graph. Example the knowledge Babelnet contains from wiki, wordnet can
-be merged with the knowledge we acquired from dcouments, website by scrapping or as in graph. So this project includes querying Babelnet for the term "Automative safety" and associated linkages with it to Neo4j. This can be further used to merge with the other knowledge/knowledge graph we may acquire. 
+be merged with the knowledge we acquired from dcouments, website by scrapping or as in graph. So this [project](https://github.com/Ganesamanian/Working-with-BabelNet/tree/main/myproject) includes querying Babelnet for the term "Automative safety" and associated linkages with it to Neo4j. This can be further used to merge with the other knowledge/knowledge graph we may acquire. 
 ![Babelnet](Image/BabelNet.png)
 
 The above graph represents the queried nodes along with their relationship using HTTP via python code from Babelnet to Neo4j
