@@ -1,0 +1,112 @@
+{% load static %}
+{% static "" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .imgbox {
+        display: grid;
+        height: 1vh;
+    }
+    .center-fit {
+        max-width: 20vw;
+        max-height: 20vh;
+        margin: auto;
+    }
+</style>
+    <meta charset="utf-8">
+    <title>VW-Report</title>
+  </head>
+  <body>
+    <h1>{{ run.run_name }}</h1>
+    <table width="100%">
+      <tr>
+        <td>
+          Back<br/>
+          <p><a href="/onepager/{{ oem }}/{{ run.get_reference.0 }}/">{{ run.get_reference.0 }}</a></p>
+        </td>
+        <td>
+      <iframe
+        src="/embedview/vw/{{ fileName }}/{{ t }}" frameborder="0"  width="1000" height="600"
+        <!-- src="/embedview/vw/0,2,1,2,2,2_1.0_5000.0/21/" frameborder="0"  width="1000" height="600" -->
+      >link</iframe></td>
+        <td align="right"> Next
+          <table>
+          {% for c, len in child_len.items %}
+          <tr><td><a href="/onepager/{{ oem }}/{{ c }}/">{{ c }} </a>  ------ {{ len }}</td></tr>
+          {% endfor %}
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <table border='1'>
+     <tr>
+       <td>
+         <table>
+   {% for pic in pic_list %}
+         <tr><td><img
+          class="center-fit" src="{{ baseUrl }}/{{ oem }}/media/{{ pic.media_path }}" %}
+          title="{{ pic.media_path }}"
+          >
+        </img></td></tr>
+    {% endfor %}
+        </table>
+      <td>
+    <td>
+      <iframe
+        src="{{ baseUrl }}/{{ oem }}/mcompare/{{ run.run_name }}/report.pdf" frameborder="0"  width="1000" height="600"
+      ></iframe>
+    </td>
+    <td>
+      <table>
+        <tr>
+          <td><iframe
+          src="/simcompare/{{ oem }}/{{ run.run_name }}/5/ED/nrg" frameborder="0"  width="700" height="600"
+          ></iframe></td>
+          <td><iframe
+          src="/simcompare/{{ oem }}/{{ run.run_name }}/5/ND/nrg" frameborder="0"  width="700" height="600"
+          ></iframe></td>
+          <td><iframe
+          src="/simcompare/{{ oem }}/{{ run.run_name }}/5/ED/ED" frameborder="0"  width="700" height="600"
+          ></iframe></td>
+          <td><iframe
+          src="/simcompare/{{ oem }}/{{ run.run_name }}/5/ND/ND" frameborder="0"  width="700" height="600"
+          ></iframe></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+    <tr>
+      <td>
+        {% for comment in comment_list %}
+          <p>{{ comment }}</p>
+        {% endfor %}
+      </td>
+      <td></td>
+    </tr>
+    </table>
+
+    <table width="100%">
+      <tr>
+        <td>
+          Back<br/>
+          <p><a href="/onepager/{{ oem }}/{{ run.get_reference.0 }}/">{{ run.get_reference.0 }}</a></p>
+        </td>
+        <td align="right"> Next
+          <table>
+          {% for c, len in child_len.items %}
+          <tr><td><a href="/onepager/{{ oem }}/{{ c }}/">{{ c }} </a>  ------ {{ len }}</td></tr>
+          {% endfor %}
+          </table>
+        </td>
+      </tr>
+    </table>
+
+  </body>
+</html
+
